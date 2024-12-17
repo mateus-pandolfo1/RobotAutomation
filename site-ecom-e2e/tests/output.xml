@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.13.0 on win32)" generated="2024-12-12T11:19:17.253594" rpa="false" schemaversion="5">
+<suite id="s1" name="Subscription" source="C:\Users\mateu\Desktop\site-ecom-e2e\tests\subscription.robot">
+<test id="s1-t1" name="Test Case 003: Create subscription with schedule delivery" line="45">
+<kw name="Open Website" owner="commom" type="SETUP">
+<kw name="New Persistent Context" owner="Browser">
+<msg time="2024-12-12T11:19:21.942205" level="INFO">{
+  "userDataDir": "is_incognito=True",
+  "browser": "chromium",
+  "headless": false,
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "chromiumSandbox": false,
+  "devtools": false,
+  "forcedColors": "none",
+  "handleSIGHUP": true,
+  "handleSIGINT": true,
+  "handleSIGTERM": true,
+  "ignoreHTTPSErrors": true,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "slowMo": 0.0,
+  "timeout": 30000.0,
+  "viewport": {
+    "height": 850,
+    "width": 1270
+  },
+  "tracesDir": "C:\\Users\\mateu\\Desktop\\site-ecom-e2e\\tests\\browser\\traces\\04ec7009-cabf-468f-b0e7-44ac333c8fc2"
+}</msg>
+<msg time="2024-12-12T11:19:22.018488" level="INFO">Starting Browser process C:\Users\mateu\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using port 60870</msg>
+<msg time="2024-12-12T11:19:22.018735" level="INFO">Node startup parameters: ['node', 'C:\\Users\\mateu\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\Browser\\wrapper\\index.js', '60870']</msg>
+<msg time="2024-12-12T11:19:25.598103" level="INFO">Successfully created context. </msg>
+<msg time="2024-12-12T11:19:25.598271" level="INFO">{'userDataDir': 'is_incognito=True', 'browser': 'chromium', 'headless': False, 'acceptDownloads': True, 'bypassCSP': False, 'chromiumSandbox': False, 'devtools': False, 'forcedColors': 'none', 'handleSIGHUP': True, 'handleSIGINT': True, 'handleSIGTERM': True, 'ignoreHTTPSErrors': True, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'slowMo': 0, 'timeout': 30000, 'viewport': {'height': 850, 'width': 1270}, 'tracesDir': 'C:\\Users\\mateu\\Desktop\\site-ecom-e2e\\tests\\browser\\traces\\04ec7009-cabf-468f-b0e7-44ac333c8fc2'}</msg>
+<arg>is_incognito=True</arg>
+<arg>headless=false</arg>
+<arg>ignoreHTTPSErrors=true</arg>
+<arg>viewport={'width': 1270, 'height': 850}</arg>
+<doc>Open a new
+[https://playwright.dev/docs/api/class-browsertype#browser-type-launch-persistent-context | persistent context].</doc>
+<status status="PASS" start="2024-12-12T11:19:21.937987" elapsed="3.660830"/>
+</kw>
+<kw name="Delete All Cookies" owner="Browser">
+<msg time="2024-12-12T11:19:25.721153" level="INFO">All cookies deleted.</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<status status="PASS" start="2024-12-12T11:19:25.599705" elapsed="0.121909"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2024-12-12T11:19:29.017935" level="INFO">Successfully opened URL https://www.petz.com.br/checkout/login/indexLogado_Loja</msg>
+<arg>https://www.petz.com.br/checkout/login/indexLogado_Loja</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2024-12-12T11:19:25.722233" elapsed="3.296208"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:19:21.934455" elapsed="7.084380"/>
+</kw>
+<kw name="Given im on the site" owner="commom">
+<kw name="Validate Element" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:19:29.141137" level="INFO">Waited for Element with selector xpath=//input[@placeholder="Digite seu e-mail ou CPF/CNPJ"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:19:29.027653" elapsed="0.113904"/>
+</kw>
+<arg>${emailTextField}</arg>
+<status status="PASS" start="2024-12-12T11:19:29.026034" elapsed="0.115998"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:19:29.024894" elapsed="0.117685"/>
+</kw>
+<kw name="And Do Login" owner="login">
+<kw name="Fill in Login" owner="login">
+<kw name="Validate and Fill Text" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:19:29.178105" level="INFO">Waited for Element with selector xpath=//input[@placeholder="Digite seu e-mail ou CPF/CNPJ"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:19:29.153315" elapsed="0.025267"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-12T11:19:29.181293" level="INFO">Fills the text '69782530140' in the given field.</msg>
+<arg>${selector}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:19:29.179274" elapsed="0.059156"/>
+</kw>
+<arg>${emailTextField}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2024-12-12T11:19:29.152020" elapsed="0.086778"/>
+</kw>
+<kw name="Validate and Fill Text" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:19:29.269614" level="INFO">Waited for Element with selector xpath=//input[@placeholder="Sua senha"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:19:29.240627" elapsed="0.029358"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-12T11:19:29.272252" level="INFO">Fills the text '123456' in the given field.</msg>
+<arg>${selector}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:19:29.270705" elapsed="0.056685"/>
+</kw>
+<arg>${passwordTextfield}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-12-12T11:19:29.239340" elapsed="0.088497"/>
+</kw>
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:19:29.349394" level="INFO">Waited for Element with selector xpath=//button[@class="ptz-btn ptz-btn-light-primary ptz-btn-md-full-width ptz-btn-left"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:19:29.330333" elapsed="0.019425"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:19:29.351805" level="INFO">Clicks the element 'xpath=//button[@class="ptz-btn ptz-btn-light-primary ptz-btn-md-full-width ptz-btn-left"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:19:29.350379" elapsed="0.102152"/>
+</kw>
+<arg>${submit}</arg>
+<status status="PASS" start="2024-12-12T11:19:29.328900" elapsed="0.123960"/>
+</kw>
+<kw name="Validate Element" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:19:41.560725" level="INFO">Waited for Element with selector xpath=//span[@class='ptz-header-profile-button-content-logged'][contains(.,'Olá, Heloisa.')] at state visible</msg>
+<arg>${selector}</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:19:29.455403" elapsed="12.105701"/>
+</kw>
+<arg>${ProfileButton}</arg>
+<status status="PASS" start="2024-12-12T11:19:29.453382" elapsed="12.108272"/>
+</kw>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-12-12T11:19:29.150481" elapsed="12.411393"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-12T11:19:45.563376" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-12T11:19:41.562324" elapsed="4.001386"/>
+</kw>
+<arg>${UserMain}</arg>
+<arg>${PasswordMain}</arg>
+<status status="PASS" start="2024-12-12T11:19:29.149210" elapsed="16.414731"/>
+</kw>
+<kw name="When Search Product" owner="home">
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:19:45.566504" level="INFO">Clicks the element 'xpath=//input[contains(@class,'ptz-input ptz-input-md ptz-input-with-icon-right ptz-input-with-icon-md ptz-input-with-icon ptz-input-boxed ptz-input-boxed-md ptz-input-boxed-resting')]'.</msg>
+<arg>${Search_Field_Xpath}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:19:45.565329" elapsed="0.103738"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-12T11:19:45.670942" level="INFO">Fills the text 'Brinquedo Chalesco' in the given field.</msg>
+<arg>${Search_Field_Xpath}</arg>
+<arg>${Product}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:19:45.669686" elapsed="0.025504"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:19:45.696788" level="INFO">Clicks the element 'xpath=//i[contains(@class,'ds-icon-line ds-search ptz-icon ptz-icon-lg ptz-icon-neutral-dark')]'.</msg>
+<arg>${Button_Search_Xpath}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:19:45.695798" elapsed="1.204728"/>
+</kw>
+<arg>Brinquedo Chalesco</arg>
+<status status="PASS" start="2024-12-12T11:19:45.564652" elapsed="1.336195"/>
+</kw>
+<kw name="And Add Product To Bag" owner="pdp">
+<kw name="Access The Product" owner="home">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:19:52.393116" level="INFO">Waited for Element with selector (//div[contains(@class,'ptz-card-content')])[1] at state visible</msg>
+<arg>${Product_Xpath}</arg>
+<arg>Visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:19:46.903193" elapsed="5.490342"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:19:52.396251" level="INFO">Clicks the element '(//div[contains(@class,'ptz-card-content')])[1]'.</msg>
+<arg>${Product_Xpath}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:19:52.394585" elapsed="1.697872"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:19:46.902505" elapsed="7.190290"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:19:56.583044" level="INFO">Waited for Element with selector //button[contains(@class,'ptz-btn ptz-btn-light-primary ptz-btn-sm ptz-btn-left')] at state visible</msg>
+<arg>${AddToBagXpath}</arg>
+<arg>Visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:19:54.093258" elapsed="2.490170"/>
+</kw>
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:19:56.780517" level="INFO">Waited for Element with selector //button[contains(@class,'ptz-btn ptz-btn-light-primary ptz-btn-sm ptz-btn-left')] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:19:56.584891" elapsed="0.196254"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:19:56.783484" level="INFO">Clicks the element '//button[contains(@class,'ptz-btn ptz-btn-light-primary ptz-btn-sm ptz-btn-left')]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:19:56.781960" elapsed="9.078339"/>
+</kw>
+<arg>${AddToBagXpath}</arg>
+<status status="PASS" start="2024-12-12T11:19:56.583934" elapsed="9.276908"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-12T11:20:07.863419" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-12T11:20:05.861656" elapsed="2.002081"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:19:46.901666" elapsed="20.962403"/>
+</kw>
+<kw name="And Select Delivery Type" owner="bag">
+<if>
+<branch type="IF" condition="'${DeliveryNumber}' == 'economic'">
+<kw name="Validate and Click" owner="commom">
+<arg>${EconomicDeliveryXpath}</arg>
+<status status="NOT RUN" start="2024-12-12T11:20:07.867824" elapsed="0.000177"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>${DeliveryChecked}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2024-12-12T11:20:07.868655" elapsed="0.000169"/>
+</kw>
+<status status="NOT RUN" start="2024-12-12T11:20:07.866843" elapsed="0.002212"/>
+</branch>
+<branch type="ELSE IF" condition="'${DeliveryNumber}' == 'express'">
+<kw name="Validate and Click" owner="commom">
+<arg>${ExpressDeliveryXpath}</arg>
+<status status="NOT RUN" start="2024-12-12T11:20:07.870154" elapsed="0.000240"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>${DeliveryChecked}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2024-12-12T11:20:07.871217" elapsed="0.000279"/>
+</kw>
+<status status="NOT RUN" start="2024-12-12T11:20:07.869278" elapsed="0.002538"/>
+</branch>
+<branch type="ELSE IF" condition="'${DeliveryNumber}' == 'schedule'">
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:18.925474" level="INFO">Waited for Element with selector xpath=//button[@type='button'][contains(.,'Agendada')] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:07.875712" elapsed="11.050444"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:20:18.929569" level="INFO">Clicks the element 'xpath=//button[@type='button'][contains(.,'Agendada')]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:18.927340" elapsed="2.359110"/>
+</kw>
+<arg>${ScheduleDeliveryXpath}</arg>
+<status status="PASS" start="2024-12-12T11:20:07.873720" elapsed="13.413710"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:21.343757" level="INFO">Waited for Element with selector xpath=//div[@class='modal-header'][contains(.,'Agende o dia e horário da sua entrega')] at state visible</msg>
+<arg>${SchedulePopup}</arg>
+<arg>Visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:21.288781" elapsed="0.055582"/>
+</kw>
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:22.291442" level="INFO">Waited for Element with selector xpath=//div[contains(@class,'item dayCard active')] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:21.348391" elapsed="0.943607"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:20:22.295163" level="INFO">Clicks the element 'xpath=//div[contains(@class,'item dayCard active')]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:22.292958" elapsed="0.118200"/>
+</kw>
+<arg>${FirstOptionSchedule}</arg>
+<status status="PASS" start="2024-12-12T11:20:21.346144" elapsed="1.065567"/>
+</kw>
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:22.450620" level="INFO">Waited for Element with selector xpath=(//input[contains(@type,'radio')])[1] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:22.414749" elapsed="0.036753"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:20:22.455976" level="INFO">Clicks the element 'xpath=(//input[contains(@type,'radio')])[1]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:22.452875" elapsed="0.161120"/>
+</kw>
+<arg>${FirstHourOptionSchedule}</arg>
+<status status="PASS" start="2024-12-12T11:20:22.412893" elapsed="0.201892"/>
+</kw>
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:22.662199" level="INFO">Waited for Element with selector id=finishSchedule at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:22.618746" elapsed="0.044364"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:20:22.667451" level="INFO">Clicks the element 'id=finishSchedule'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:22.664421" elapsed="0.241655"/>
+</kw>
+<arg>${ButtonFinishSchedule}</arg>
+<status status="PASS" start="2024-12-12T11:20:22.616326" elapsed="0.290497"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:25.897874" level="INFO">Waited for Element with selector xpath=//i[contains(@class,'ds-icon-line ptz-icon ds-check ptz-icon-md')] at state visible</msg>
+<arg>${DeliveryChecked}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:22.907869" elapsed="2.990550"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:20:07.872053" elapsed="18.026658"/>
+</branch>
+<branch type="ELSE IF" condition="'${DeliveryNumber}' == 'pickup'">
+<kw name="Validate and Click" owner="commom">
+<arg>${PickupDeliveryXpath}</arg>
+<status status="NOT RUN" start="2024-12-12T11:20:25.900011" elapsed="0.000209"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>${PickupPopup}</arg>
+<arg>Visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2024-12-12T11:20:25.901453" elapsed="0.000253"/>
+</kw>
+<kw name="Validate and Click" owner="commom">
+<arg>${FirstOptionPickup}</arg>
+<status status="NOT RUN" start="2024-12-12T11:20:25.902644" elapsed="0.000237"/>
+</kw>
+<kw name="Validate and Click" owner="commom">
+<arg>${ButtonConfirmPickup}</arg>
+<status status="NOT RUN" start="2024-12-12T11:20:25.903438" elapsed="0.000147"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>${DeliveryChecked}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2024-12-12T11:20:25.904181" elapsed="0.000154"/>
+</kw>
+<status status="NOT RUN" start="2024-12-12T11:20:25.899006" elapsed="0.005533"/>
+</branch>
+<status status="PASS" start="2024-12-12T11:20:07.866763" elapsed="18.037935"/>
+</if>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-12T11:20:26.906143" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-12T11:20:25.905125" elapsed="1.001315"/>
+</kw>
+<arg>schedule</arg>
+<status status="PASS" start="2024-12-12T11:20:07.865843" elapsed="19.040940"/>
+</kw>
+<kw name="And Subscribe Product" owner="bag">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-12T11:20:26.909877" level="INFO">${ToggleSubscribeProductXpath} = xpath=(//div[@class="slider round"])[1]</msg>
+<var>${ToggleSubscribeProductXpath}</var>
+<arg>${ToggleSubscribeProductBaseXpath}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-12T11:20:26.909237" elapsed="0.000850"/>
+</kw>
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:26.937026" level="INFO">Waited for Element with selector xpath=(//div[@class="slider round"])[1] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:26.912904" elapsed="0.024729"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:20:26.941377" level="INFO">Clicks the element 'xpath=(//div[@class="slider round"])[1]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:26.938575" elapsed="0.122099"/>
+</kw>
+<arg>${ToggleSubscribeProductXpath}</arg>
+<status status="PASS" start="2024-12-12T11:20:26.911202" elapsed="0.150204"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-12T11:20:28.063586" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-12T11:20:27.062259" elapsed="1.001648"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${ToggleSubscribeProductXpath}' == 'true'</arg>
+<arg>Log</arg>
+<arg>Toggle Is ON</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-12T11:20:28.064545" elapsed="0.000801"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:20:28.066885" level="INFO">Clicks the element 'xpath=//li[@value='30'][contains(.,'30 dias')]'.</msg>
+<arg>${ToggleValue30Xpath}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:28.065844" elapsed="0.088659"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:28.171215" level="INFO">Waited for Element with selector //span[@class='input-frequency-title'][contains(.,'Envio a cada 30 dias')] at state visible</msg>
+<arg>//span[@class='input-frequency-title'][contains(.,'Envio a cada 30 dias')]</arg>
+<arg>Visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:28.155128" elapsed="0.016485"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-12T11:20:30.173568" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-12T11:20:28.172296" elapsed="2.001596"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2024-12-12T11:20:26.908138" elapsed="3.266072"/>
+</kw>
+<kw name="And Go To Checkout" owner="bag">
+<kw name="Scroll By" owner="Browser">
+<msg time="2024-12-12T11:20:30.296748" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2024-12-12T11:20:30.297069" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2024-12-12T11:20:30.367577" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2024-12-12T11:20:30.367812" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2024-12-12T11:20:30.401663" level="INFO">JavaScript executed successfully.</msg>
+<arg>${GoToCheckoutXpath}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Scrolls an element or the page relative from current position by the given values.</doc>
+<status status="PASS" start="2024-12-12T11:20:30.176532" elapsed="0.225747"/>
+</kw>
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:30.424192" level="INFO">Waited for Element with selector xpath=//span[contains(.,'Ir para pagamento')] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:30.404660" elapsed="0.020120"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:20:30.427671" level="INFO">Clicks the element 'xpath=//span[contains(.,'Ir para pagamento')]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:30.425635" elapsed="0.167565"/>
+</kw>
+<arg>${GoToCheckoutXpath}</arg>
+<status status="PASS" start="2024-12-12T11:20:30.403230" elapsed="0.190534"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:30.613185" level="INFO">Waited for Element with selector xpath=//h1[@class='title'][contains(.,'Sacola')] at state visible</msg>
+<arg>${ImgBagXpath}</arg>
+<arg>Visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:30.594479" elapsed="0.019275"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:20:30.175551" elapsed="0.438972"/>
+</kw>
+<kw name="And Fill Fields Of Credit Card" owner="checkout">
+<kw name="Validate and Fill Text" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:31.520141" level="INFO">Waited for Element with selector xpath=//input[contains(@placeholder,'Digite o número do cartão')] at state visible</msg>
+<arg>${selector}</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:30.623175" elapsed="0.897798"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-12T11:20:31.525879" level="INFO">Fills the text '5116841376681067' in the given field.</msg>
+<arg>${selector}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:31.523531" elapsed="0.358514"/>
+</kw>
+<arg>${FieldCard}</arg>
+<arg>5116841376681067</arg>
+<status status="PASS" start="2024-12-12T11:20:30.620917" elapsed="1.261675"/>
+</kw>
+<kw name="Validate and Fill Text" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:31.940820" level="INFO">Waited for Element with selector xpath=//input[contains(@placeholder,'Digite o nome que está no cartão')] at state visible</msg>
+<arg>${selector}</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:31.884896" elapsed="0.056407"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-12T11:20:31.944028" level="INFO">Fills the text 'Teste QA' in the given field.</msg>
+<arg>${selector}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:31.942044" elapsed="0.086350"/>
+</kw>
+<arg>${FieldCardName}</arg>
+<arg>Teste QA</arg>
+<status status="PASS" start="2024-12-12T11:20:31.883383" elapsed="0.145996"/>
+</kw>
+<kw name="Select Options By" owner="Browser">
+<msg time="2024-12-12T11:20:32.032638" level="INFO">Selects the option(s) 01 by attribute SelectAttribute.label from element xpath=//div[@class="wrapper-installments"]/select[1].</msg>
+<arg>${MonthExpire}</arg>
+<arg>text</arg>
+<arg>01</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:32.030430" elapsed="0.084171"/>
+</kw>
+<kw name="Select Options By" owner="Browser">
+<msg time="2024-12-12T11:20:32.117463" level="INFO">Selects the option(s) 2029 by attribute SelectAttribute.label from element xpath=//div[@class="wrapper-installments"]/select[2].</msg>
+<arg>${YearExpire}</arg>
+<arg>text</arg>
+<arg>2029</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:32.115409" elapsed="0.145236"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-12T11:20:32.264632" level="INFO">Fills the text '739' in the given field.</msg>
+<arg>${SecurityCode}</arg>
+<arg>739</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:32.261929" elapsed="0.095381"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:20:30.618757" elapsed="1.739184"/>
+</kw>
+<kw name="And Check Terms And Conditions Of Subscribe" owner="checkout">
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:32.421074" level="INFO">Waited for Element with selector xpath=//input[contains(@class,'ptz-checkbox ptz-checkbox-sm ptz-checkbox-light-error')] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:32.389480" elapsed="0.032613"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:20:32.424820" level="INFO">Clicks the element 'xpath=//input[contains(@class,'ptz-checkbox ptz-checkbox-sm ptz-checkbox-light-error')]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:32.422980" elapsed="0.240069"/>
+</kw>
+<arg>${TermsAndConditionsCheckbox}</arg>
+<status status="PASS" start="2024-12-12T11:20:32.387851" elapsed="0.275825"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:20:32.386331" elapsed="0.277787"/>
+</kw>
+<kw name="And Finish Order" owner="checkout">
+<kw name="Validate and Click" owner="commom">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-12T11:20:32.689231" level="INFO">Waited for Element with selector xpath=//button[@data-testid='ptz-checkout-pay-now'][contains(.,'Pagar agora')] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<arg>timeout=30 s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-12T11:20:32.668427" elapsed="0.021709"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-12T11:20:32.693346" level="INFO">Clicks the element 'xpath=//button[@data-testid='ptz-checkout-pay-now'][contains(.,'Pagar agora')]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-12T11:20:32.691087" elapsed="0.253733"/>
+</kw>
+<arg>${BttPayNow}</arg>
+<status status="PASS" start="2024-12-12T11:20:32.666797" elapsed="0.278749"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-12T11:20:37.948425" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-12T11:20:32.946565" elapsed="5.002200"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:20:32.665616" elapsed="5.284004"/>
+</kw>
+<kw name="Close Website" owner="commom" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-12T11:20:39.954897" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-12T11:20:37.954156" elapsed="2.000931"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2024-12-12T11:20:40.186252" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2024-12-12T11:20:39.955551" elapsed="0.231261"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2024-12-12T11:20:41.243259" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-12T11:20:40.187369" elapsed="1.056732"/>
+</kw>
+<status status="PASS" start="2024-12-12T11:20:37.952486" elapsed="3.292019"/>
+</kw>
+<doc>O cenário em questão valida a criação de uma assinatura</doc>
+<tag>CreateSubscription</tag>
+<tag>Positive</tag>
+<tag>Regression1</tag>
+<status status="PASS" start="2024-12-12T11:19:21.930506" elapsed="79.314536"/>
+</test>
+<status status="PASS" start="2024-12-12T11:19:17.257749" elapsed="84.102511"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">CreateSubscription</stat>
+<stat pass="1" fail="0" skip="0">Positive</stat>
+<stat pass="1" fail="0" skip="0">Regression1</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Subscription">Subscription</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

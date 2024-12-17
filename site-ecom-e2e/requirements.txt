@@ -1,0 +1,5 @@
+robotframework
+Browser
+robotframework-faker
+chromedriver-autoinstaller
+robotframework-csvlibrary
